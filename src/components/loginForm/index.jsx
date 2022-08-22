@@ -4,7 +4,7 @@ import './styles.css';
 import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const [credentials, setCredentials] = useState({
         username: "",
         password: "",
