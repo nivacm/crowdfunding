@@ -19,6 +19,7 @@ function HomePage() {
 
     return (
     <div >
+        <p> Home page</p>
         {projectData.map((project, index) => (
             <ProjectCard 
                 key={index}
