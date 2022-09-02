@@ -7,6 +7,10 @@ const Nav = () => {
         <nav>
             <Link to ="/">Home</Link>  
             <Link to="/login">Login</Link>
+            <link to="/project">Project</link>
+            {/* <div>
+                <h1>MigARTion-CREAtion</h1>
+            </div> */}
         </nav>
     )
 

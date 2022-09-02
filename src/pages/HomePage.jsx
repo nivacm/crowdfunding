@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import ProjectCard from "../components/projectCard";
+// import { allProjects } from'../data';
 
 function HomePage() {
     const [projectData, updateProjectData] = useState([])
@@ -20,12 +21,12 @@ function HomePage() {
     return (
     <div >
         <p> Home page</p>
-        {projectData.map((project, index) => (
-            <ProjectCard 
+        {projectData.map((project, index) => {
+            return <ProjectCard 
                 key={index}
-                project={project}
-            />
-        ))}
+                projectData={project}
+            />;
+        })}
     </div>
     )
 }
