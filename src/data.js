@@ -7,7 +7,8 @@ export const allProjects = [{
     is_open: false,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 2,
     title: "Project Two",
     description: "The second project.",
@@ -16,7 +17,8 @@ export const allProjects = [{
     is_open: true,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 3,
     title: "Project Three",
     description: "The third project.",
@@ -25,7 +27,8 @@ export const allProjects = [{
     is_open: false,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 4,
     title: "Project Four",
     description: "The fourth project.",
@@ -34,7 +37,8 @@ export const allProjects = [{
     is_open: true,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 5,
     title: "Project Five",
     description: "The fifth project.",
@@ -43,7 +47,8 @@ export const allProjects = [{
     is_open: false,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 6,
     title: "Project Six",
     description: "The sixth project.",
@@ -52,7 +57,8 @@ export const allProjects = [{
     is_open: true,
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
-}, {
+},
+{
     id: 7,
     title: "Project Seven",
     description: "The seventh project.",
@@ -73,11 +79,11 @@ export const oneProject = {
     date_created: "2020-03-20T14:22:23.382748Z",
     owner: 1,
     pledges: [{
-        id: 1,
-        amount: 100,
-        comment: "A comment for the pledge",
-        anonymous: false,
-        supporter: 3,
-        project_id: 1,
+    id: 1,
+    amount: 100,
+    comment: "A comment for the pledge",
+    anonymous: false,
+    supporter: 3,
+    project_id: 1,
     }]
 };

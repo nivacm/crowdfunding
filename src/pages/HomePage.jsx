@@ -1,34 +1,35 @@
-import React, { useState, useEffect} from "react";
-import ProjectCard from "../components/projectCard";
-// import { allProjects } from'../data';
+import React, { useState, useEffect } from 'react';
+import { allProjects } from "../data";
+import ProjectCard from '../components/ProjectCard';
 
-function HomePage() {
+function HomePage(){
     const [projectData, updateProjectData] = useState([])
 
-    // When we load our HomePage, we render all projects in the
-    // projectData array. This is by default empty. However, we
-    // have projects in our Heroku Database that we deployed and
-    // made accessible last subject with python. We can now get
-    // those projects by making a get request and storing the 
-    // result in our projectData state.
-    
+    // When we load our HomePage, we render all projects in the 
+    // projectData array. This is by default empty. However, we have
+    // projects in our Heroku database that we deployed and made 
+    // accessible last subject with Python. We can now get those projects
+    // by making a get request and storing the result in our projectData state
+
+    // When we mount our Application, we want to store the contents
+    // of allProjects in our state 
+
     useEffect(() => {
+      // When we mount our HomePage, I want to get our 
+        // projects from out DRF API that we created in our
+        // DRF module.  
         fetch(`${process.env.REACT_APP_API_URL}projects`)
-            .then(res => res.json())
-            .then(data => updateProjectData(data))
-    }, [])
+            .then(res =>  res.json())
+            .then(data => { updateProjectData(data) })
+        
+    },[])
 
     return (
-    <div >
-        <p> Home page</p>
-        {projectData.map((project, index) => {
-            return <ProjectCard 
-                key={index}
-                projectData={project}
-            />;
+        <div id='project-list'>
+            {projectData.map((project, index) => {
+                return <ProjectCard key={index} projectData={project} />
         })}
-    </div>
-    )
+        </div>
+    );
 }
-
-export default HomePage
+export default HomePage;
