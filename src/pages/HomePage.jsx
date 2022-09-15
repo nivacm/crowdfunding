@@ -20,7 +20,7 @@ function HomePage(){
         // DRF module.  
         fetch(`${process.env.REACT_APP_API_URL}projects`)
             .then(res =>  res.json())
-            .then(data => { updateProjectData(data) })
+            .then(data => {  updateProjectData(data) })
         
     },[])
 

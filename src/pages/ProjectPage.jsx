@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 function ProjectPage() {
     const [projectData, setProjectData] = useState({pledges: [] })
+    const [users, setUsers] = useState()
     const { id } = useParams()
 
 
