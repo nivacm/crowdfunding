@@ -2,26 +2,23 @@ import React, {useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
 function ProjectPage() {
-    const [loading, setLoading]= useState(false)
     const [projectData, setProjectData] = useState({pledges: [] })
     // const [users, setUsers] = useState()
     const { id } = useParams()
 
     useEffect(() => {
-        setLoading(true)
         fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
         .then((results) => {
         return results.json();
         })
         .then((data) => {
-            setProjectData(data);
-            setLoading(false)
-        
-        })
+            setProjectData(data);    
+        });
     }, []);
+
+
     return (
         <div className="project-wrapper">
-            {loading ? <LoadingSpinner /> : <div>
             <div className="project=title"> 
                 <h2>{projectData.title}</h2>
                 <button type="submit" className="pledge-button">Pledge Here! </button>
@@ -37,7 +34,7 @@ function ProjectPage() {
         
         
         <h2>Pledges:</h2>
-        <div >
+        <div>
         {projectData.pledges.map((pledgeData, key) => {
             return (
             <div  className="pledge-box" key = {key}>
@@ -45,11 +42,9 @@ function ProjectPage() {
             {pledgeData.comment}
             </div>   
             );
-        })}
-        </div>
+        })} 
         </div>
     }
-        </div>);
+    </div>);
 }
-
 export default ProjectPage;

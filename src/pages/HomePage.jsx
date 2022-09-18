@@ -20,14 +20,15 @@ function HomePage(){
         // DRF module.  
         fetch(`${process.env.REACT_APP_API_URL}projects`)
             .then(res =>  res.json())
-            .then(data => {  updateProjectData(data) })
+            .then(data => {  updateProjectData(data) 
+        })
         
     },[])
 
     return (
         <div id='project-list'>
             {projectData.map((project, index) => {
-                return <ProjectCard key={index} projectData={project} />
+                        return <ProjectCard key={index} projectData={projectData} />
         })}
         </div>
     );
