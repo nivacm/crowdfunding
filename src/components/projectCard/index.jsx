@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ProjectCard.css';
+import './styles.css';
 
 function ProjectCard(props) {
     const { projectData } = props;
     return (
         <div className='project-card'>
-            <Link to={'/projects/${projectData.id}'}>
+            <Link to={`/projects/${projectData.id}`}>
                 <img 
                 alt="project"
                 src={projectData.image}
@@ -16,4 +16,4 @@ function ProjectCard(props) {
         </div>
     )
 }
-export default ProjectCard;
+export default ProjectCard;  

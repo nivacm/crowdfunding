@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import "./LoginForm.css"
+import "./styles.css"
 
 function LoginForm() {
     const navigate = useNavigate()
@@ -37,13 +37,26 @@ const handleSubmit = (e) => {
     e.preventDefault();
     if (credentials.username && credentials.password) {
         postData().then((response) => {
-            console.log(response.json());
-            window.localStorage.setItem("token", response.token);
-            console.log("logged in")
-            navigate("/")
-        });
-    };
-}
+            console.log(response)
+            if (response.token) {
+                window.localStorage.setItem("token", response.token);
+                console.log(response.status)
+                localStorage.setItem('username', credentials.username);
+                console.log('logged in', localStorage.getItem('username'));
+                navigate("/users/:id")
+            }
+            else {
+                alert("Username or Password is incorrect. Please try again.")
+                console.log("log-in failed")
+            }
+        })
+        .catch(err => {
+            
+            console.log(err);
+        })    
+    }        
+
+};
 
     return (
         <form>
